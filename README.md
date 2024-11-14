@@ -1,0 +1,1 @@
+We would be creating an AI chat box that can understand some certain languages
