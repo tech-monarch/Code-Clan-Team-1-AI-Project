@@ -7,6 +7,10 @@ export default {
         customBlack: "#000000",
         customPink: "#F21F7B",
       },
+
+      fontFamily: {
+        laila: ["Laila"],
+      },
     },
   },
   plugins: [],
