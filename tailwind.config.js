@@ -11,6 +11,10 @@ export default {
       fontFamily: {
         laila: ["Laila"],
       },
+
+      animation: {
+        "swipe-up": "swipe-up 0.5s ease-out forwards",
+      },
     },
   },
   plugins: [],

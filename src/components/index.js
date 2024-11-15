@@ -1,3 +1,4 @@
 import LandingPage from "./pages/LandingPage";
+import Chat from "./pages/Chat";
 
-export { LandingPage };
+export { LandingPage, Chat };

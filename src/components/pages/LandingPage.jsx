@@ -1,43 +1,75 @@
-import Button from "../common/Button";
+import TypewriterComponent from "typewriter-effect";
+// import Button from "../common/Button";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const [swipe, setSwipe] = useState(false);
+  const navigate = useNavigate();
+
+  const handleStartChatting = () => {
+    setSwipe(true);
+    setTimeout(() => {
+      navigate("/chat-box");
+    }, 500);
+  };
   return (
-    <section className="max-w-[800px] w-full mx-auto">
+    <section
+      className={`max-w-[800px] w-full mx-auto transition-all ${
+        swipe ? "animate-swipe-up" : ""
+      }`}
+    >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
         <div>
           <h1 className="text-[48px] leading-[74.4px] font-bold font-laila">
-            Hi, I&apos;m Lumina.
+            <TypewriterComponent
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Hi, I'm Lumina.")
+                  .pauseFor(500) // Delay after the first line finishes
+                  .typeString("<br>") // Line break
+                  .typeString("Your AI Companion!")
+                  .start();
+              }}
+              options={{
+                autoStart: true,
+                loop: false, // Set to false to prevent looping/deletion
+                cursor: "_",
+                delay: 100,
+              }}
+            />
+            {/* Hi, I&apos;m Lumina. <br />
+            Your AI Companion */}
           </h1>
-          <h3 className="text-[48px] leading-[74.4px] font-bold font-laila">
-            Your AI Companion
-          </h3>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-5">
-          <Button
-            className="bg-customPink px-20 py-2 text-center text-customBlack text-[24px] font-bold leading-[29.05px] cursor-pointer"
-            href="/"
-          >
-            Get Started
-          </Button>
-          <Button
-            className="bg-customPink px-20 py-2 text-center text-customBlack text-[24px] font-bold leading-[29.05px] cursor-pointer"
-            href="/"
-          >
-            Sign In
-          </Button>
-        </div>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col justify-center items-center gap-5">
+            <button
+              onClick={handleStartChatting}
+              className="bg-customPink px-28 py-3 text-center text-white text-[24px] font-bold leading-[29.05px] cursor-pointer rounded-full shadow-md"
+            >
+              Start Chatting
+            </button>
+          </div>
 
-        <h4 className="text-center">
-          By continuing, you agree to our{" "}
-          <span>
-            <a className="underline font-semibold" href="/"> Privacy Policy</a>
-          </span>{" "}
-          &{" "}
-          <span>
-            <a className="underline font-semibold" href="/"> Terms of Use</a>
-          </span>
-        </h4>
+          <h4 className="text-center">
+            By continuing, you agree to our{" "}
+            <span>
+              <a className="underline font-semibold" href="/">
+                {" "}
+                Privacy Policy
+              </a>
+            </span>{" "}
+            &{" "}
+            <span>
+              <a className="underline font-semibold" href="/">
+                {" "}
+                Terms of Use
+              </a>
+            </span>
+          </h4>
+        </div>
       </div>
     </section>
   );
