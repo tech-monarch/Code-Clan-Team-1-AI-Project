@@ -9,7 +9,7 @@ export default {
       },
 
       fontFamily: {
-        laila: ["Laila"],
+        inter: ["Inter"],
       },
 
       animation: {

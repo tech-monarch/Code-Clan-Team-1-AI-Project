@@ -21,12 +21,12 @@ const LandingPage = () => {
     >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
         <div>
-          <h1 className="text-[48px] leading-[74.4px] font-bold font-laila">
+          <h1 className="text-[48px] leading-[74.4px] font-bold">
             <TypewriterComponent
               onInit={(typewriter) => {
                 typewriter
                   .typeString("Hi, I'm Lumina.")
-                  .pauseFor(500) // Delay after the first line finishes
+                  .pauseFor(750) // Delay after the first line finishes
                   .typeString("<br>") // Line break
                   .typeString("Your AI Companion!")
                   .start();
@@ -38,8 +38,6 @@ const LandingPage = () => {
                 delay: 100,
               }}
             />
-            {/* Hi, I&apos;m Lumina. <br />
-            Your AI Companion */}
           </h1>
         </div>
 
@@ -47,13 +45,13 @@ const LandingPage = () => {
           <div className="flex flex-col justify-center items-center gap-5">
             <button
               onClick={handleStartChatting}
-              className="bg-customPink px-28 py-3 text-center text-white text-[24px] font-bold leading-[29.05px] cursor-pointer rounded-full shadow-md"
+              className="bg-customPink font-inter px-28 py-3 text-center text-white text-[24px] font-bold leading-[29.05px] cursor-pointer rounded-full shadow-md"
             >
               Start Chatting
             </button>
           </div>
 
-          <h4 className="text-center">
+          <h4 className="text-center font-inter">
             By continuing, you agree to our{" "}
             <span>
               <a className="underline font-semibold" href="/">
