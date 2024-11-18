@@ -11,7 +11,7 @@ const Chat = () => {
     if (message.trim() === "") return;
 
     try {
-      const res = await fetch('http://localhost/backend/chatbot.php', {
+      const res = await fetch('chatbot.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
