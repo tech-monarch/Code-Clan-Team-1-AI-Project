@@ -14,11 +14,7 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
     setDropdownOpen((prev) => !prev);
   };
 
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-    setDropdownOpen(false); // Close dropdown after selection
-  };
-
+  
   const handleSendMessage = async () => {
     if (message.trim() === "") return;
 
@@ -53,17 +49,20 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
       console.error("Error sending message:", error);
     }
   };
+
   const handleLanguageChange = (lang) => {
   setLanguage(lang);
   setSelectedMode(lang); // Set the selected mode
   setShowPopup(true); // Show the popup when a mode is selected
   setDropdownOpen(false); // Close dropdown after selection
 
-  // Close popup after 3 seconds
+  // Close popup after 2 seconds (2000ms)
   setTimeout(() => {
     setShowPopup(false);
-  }, 2000);
+  }, 2000);  // Increased to 2 seconds
 };
+
+
 
 
   // Get language prompt based on selected mode
