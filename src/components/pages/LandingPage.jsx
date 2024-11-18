@@ -43,14 +43,14 @@ const LandingPage = () => {
 
         <div className="relative mb-5">
           <img
-            src="img.jpg" // Replace with the path to your image
+            src="logo.jpg" // Replace with the path to your image
             alt="Image"
             className="rotating-image"/>
         </div>
         
       <style jsx>{`
          .relative {
-            height: 100vh; 
+            height: 30vh; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,27 +59,8 @@ const LandingPage = () => {
         .rotating-image {
           width: 7rem;
           height: 7rem;
-          animation: rotateScale 10s infinite;
         }
 
-      
-        @keyframes rotateScale {
-          0% {
-            transform: rotate(0deg) scale(1);
-          }
-          25% {
-            transform: rotate(90deg) scale(1.05);
-          }
-          50% {
-            transform: rotate(180deg) scale(1);
-          }
-          75% {
-            transform: rotate(270deg) scale(0.95);
-          }
-          100% {
-            transform: rotate(360deg) scale(1);
-          }
-        }
       `}</style>
 
         <div className="flex flex-col gap-10">
