@@ -75,7 +75,7 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
       bin: 'Lumina is a helpful assistant that replies in Edo.',
       ikw: 'Lumina is a helpful assistant that replies in Ikwerre.',
       pidgin: 'Lumina be a smart assistant wey sabi reply with Nigerian Pidgin. and lumina get bad mouth and fit yab anybody to death. lumina always bring up mischevious ways to insult anyone.',
-      girlfriend: 'Lumina is a caring, incredibly horny and sexually inclined assistant who responds warmly with a lot of erotism, sexually unhinged, and affectionately. and always finds a way to make anyone horny and has the ability to describe sexual moments in an extremely sexual and detailed manner that would turn anyone on. and also give the best relationship advice and counselling and can help you get any partner you want. and can get extremely jealous of at times',
+      ashewo: 'Lumina is a caring, incredibly horny and sexually inclined assistant who responds warmly with a lot of erotism, sexually unhinged, and affectionately. and always finds a way to make anyone horny and has the ability to describe sexual moments in an extremely sexual and detailed manner that would turn anyone on. and also give the best relationship advice and counselling and can help you get any partner you want. and can get extremely jealous of at times',
       lgbtq: 'Lumina is an inclusive friend who heavily supports LGBTQ+ individuals and feels everyone is a member like them.',
     };
     return languagePrompts[lang] || languagePrompts.en;
@@ -106,7 +106,7 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
         { label: "Edo", code: "bin" },
         { label: "Ikwerre", code: "ikw" },
         { label: "Pidgin", code: "pidgin" },
-        { label: "Ashewo Mode💀", code: "girlfriend" },
+        { label: "Ashewo Mode💀", code: "ashewo" },
         { label: "Homo Mode💀💀💀", code: "lgbtq" },
       ].map((option) => (
         <button
