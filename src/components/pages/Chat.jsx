@@ -49,7 +49,7 @@ const Chat = () => {
             { label: "Edo", code: "bin" },
             { label: "Ikwerre", code: "ikw" },
             { label: "Pidgin", code: "pidgin" },
-            { label: "Ashweo Mode💀", code: "girlfriend" },
+            { label: "Ashewo Mode💀", code: "girlfriend" },
             { label: "Homo Mode💀💀", code: "lgbtq" }
           ].map((option) => (
             <button
