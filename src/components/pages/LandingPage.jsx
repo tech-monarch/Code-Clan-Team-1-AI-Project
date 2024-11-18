@@ -41,7 +41,7 @@ const LandingPage = () => {
           </h1>
         </div>
 
-        <div className="relative">
+        <div className="relative mb-5">
           <img
             src="img.JPG" // Replace with the path to your image
             alt="Rotating Image"
@@ -49,6 +49,14 @@ const LandingPage = () => {
         </div>
         
       <style jsx>{`
+         .relative {
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #121212; 
+          }
+      
         .rotating-image {
           width: 7rem;
           height: 7rem;
