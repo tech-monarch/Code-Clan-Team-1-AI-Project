@@ -62,7 +62,7 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   // Close popup after 3 seconds
   setTimeout(() => {
     setShowPopup(false);
-  }, 200);
+  }, 2000);
 };
 
 
