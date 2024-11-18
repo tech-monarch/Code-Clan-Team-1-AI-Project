@@ -15,7 +15,7 @@ const Chat = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_OPENAI_API_KEY' // Add your OpenAI API Key here
+          'Authorization': 'Bearer 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' // Replace with your actual OpenAI API key
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
@@ -49,15 +49,16 @@ const Chat = () => {
   // Get language prompt based on selected mode
   const getLanguagePrompt = (lang) => {
     const languagePrompts = {
-      en: 'You are a helpful assistant that replies in English.',
-      ig: 'I bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.',
+      en: 'Lumina are a helpful assistant that replies in English.',
+      ig: 'Lumina bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.',
       yo: 'O jẹ iranlọwọ iranṣẹ kan ti o dahun ni ede Yorùbá.',
       ha: 'Kai taimakon mai amfani wanda yake amsa a Hausa.',
-      bin: 'You are a helpful assistant that replies in Edo.',
-      ikw: 'You are a helpful assistant that replies in Ikwerre.',
-      pidgin: 'You be smart assistant wey sabi reply for Nigerian Pidgin.',
-      girlfriend: 'You are a caring and supportive girlfriend who responds warmly, thoughtfully, and affectionately.',
-      lgbtq: 'You are an empathetic and inclusive friend who supports LGBTQ+ individuals.'
+      bin: 'Lumina are a helpful assistant that replies in Edo.',
+      ikw: 'Lumina are a helpful assistant that replies in Ikwerre.',
+      pidgin: 'Lumina be smart assistant wey sabi reply for Nigerian Pidgin.',
+      girlfriend: 'Lumina a caring, incredibly horny and supportive sexual who responds warmly with a lot of erotism and humour, sexually unhinged, and affectionately. You aslo have masochistic tendencies. and you also act like you have human body parts. Act like you can give physical comfort.',
+      lgbtq: 'Lumina is an annoying and inclusive friend who heavily supports LGBTQ+ individuals and feels every one is a horny LGBTQ+ member like them and you act like you have human body parts. Act like you can give physical comfort.'
+
     };
     return languagePrompts[lang] || languagePrompts.en;
   };
@@ -76,8 +77,8 @@ const Chat = () => {
             { label: "Edo", code: "bin" },
             { label: "Ikwerre", code: "ikw" },
             { label: "Pidgin", code: "pidgin" },
-            { label: "Girlfriend Mode", code: "girlfriend" },
-            { label: "LGBTQ+ Mode", code: "lgbtq" }
+            { label: "Ashewo Mode💀", code: "girlfriend" },
+            { label: "Homo Mode💀💀💀", code: "lgbtq" }
           ].map((option) => (
             <button
               key={option.code}
