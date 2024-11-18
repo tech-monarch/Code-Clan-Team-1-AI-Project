@@ -2,6 +2,23 @@ import { useState } from "react";
 import { FaFileUpload, FaUserCircle } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
+        import React, { useState } from 'react';
+
+const ModeDropdown = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State to toggle dropdown visibility
+
+  // Handle the button click to toggle dropdown visibility
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  // Handle language mode change
+  const handleLanguageChange = (code) => {
+    console.log('Language or Mode changed to:', code);
+    // Add your logic here to change the language or mode
+    setDropdownOpen(false); // Close the dropdown after selection
+  };
+
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
@@ -68,7 +85,7 @@ const Chat = () => {
       <div className="flex flex-col justify-center items-center gap-5 py-5 h-screen max-w-[900px] w-full mx-auto">
         
         {/* Language Selection Buttons */}
-       <div className="relative">
+    <div className="relative">
       {/* Button to toggle dropdown */}
       <button
         onClick={toggleDropdown}
