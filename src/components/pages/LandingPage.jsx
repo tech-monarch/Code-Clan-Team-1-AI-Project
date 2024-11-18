@@ -55,6 +55,7 @@ const LandingPage = () => {
           animation: rotateScale 10s infinite;
         }
 
+      
         @keyframes rotateScale {
           0% {
             transform: rotate(0deg) scale(1);
