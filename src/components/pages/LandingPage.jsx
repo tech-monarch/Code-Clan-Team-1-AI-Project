@@ -54,7 +54,6 @@ const LandingPage = () => {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #121212; 
           }
       
         .rotating-image {
