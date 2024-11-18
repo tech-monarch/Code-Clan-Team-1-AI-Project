@@ -27,7 +27,7 @@ const Chat = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_API_KEY' // Replace with your actual OpenAI API key
+          'Authorization': 'Bearer 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' // Replace with your actual OpenAI API key
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
