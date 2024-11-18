@@ -68,15 +68,15 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   // Get language prompt based on selected mode
   const getLanguagePrompt = (lang) => {
     const languagePrompts = {
-      en: 'Lumina is a helpful assistant that replies in English.',
-      ig: 'Lumina bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.',
-      yo: 'O jẹ iranlọwọ iranṣẹ kan ti o dahun ni ede Yorùbá.',
-      ha: 'Kai taimakon mai amfani wanda yake amsa a Hausa.',
-      bin: 'Lumina is a helpful assistant that replies in Edo.',
-      ikw: 'Lumina is a helpful assistant that replies in Ikwerre.',
+      english: 'Lumina is a helpful assistant that replies in English.',
+      igbo: 'Lumina bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.',
+      yoruba: 'O jẹ iranlọwọ iranṣẹ kan ti o dahun ni ede Yorùbá.',
+      hausa: 'Kai taimakon mai amfani wanda yake amsa a Hausa.',
+      benin: 'Lumina is a helpful assistant that replies in Edo.',
+      ikwerre: 'Lumina is a helpful assistant that replies in Ikwerre.',
       pidgin: 'Lumina be a smart assistant wey sabi reply with Nigerian Pidgin. and lumina get bad mouth and fit yab anybody to death. lumina always bring up mischevious ways to insult anyone.',
       ashewo: 'Lumina is a caring, incredibly horny and sexually inclined assistant who responds warmly with a lot of erotism, sexually unhinged, and affectionately. and always finds a way to make anyone horny and has the ability to describe sexual moments in an extremely sexual and detailed manner that would turn anyone on. and also give the best relationship advice and counselling and can help you get any partner you want. and can get extremely jealous of at times',
-      lgbtq: 'Lumina is an inclusive friend who heavily supports LGBTQ+ individuals and feels everyone is a member like them.',
+      Homoooo: 'Lumina is an inclusive friend who heavily supports LGBTQ+ individuals and feels everyone is a member like them.',
     };
     return languagePrompts[lang] || languagePrompts.en;
   };
@@ -99,15 +99,15 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
   {dropdownOpen && (
     <div className="absolute mt-2 bg-pink-500 text-white rounded-lg shadow-lg w-48">
       {[
-        { label: "English", code: "en" },
-        { label: "Igbo", code: "ig" },
-        { label: "Yoruba", code: "yo" },
-        { label: "Hausa", code: "ha" },
-        { label: "Edo", code: "bin" },
-        { label: "Ikwerre", code: "ikw" },
+        { label: "English", code: "english" },
+        { label: "Igbo", code: "igbo" },
+        { label: "Yoruba", code: "yoruba" },
+        { label: "Hausa", code: "hausa" },
+        { label: "Edo", code: "benin" },
+        { label: "Ikwerre", code: "ikwerre" },
         { label: "Pidgin", code: "pidgin" },
         { label: "Ashewo Mode💀", code: "ashewo" },
-        { label: "Homo Mode💀💀💀", code: "lgbtq" },
+        { label: "Homo Mode💀💀💀", code: "Homoooo" },
       ].map((option) => (
         <button
           key={option.code}
