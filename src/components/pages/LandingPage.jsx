@@ -43,7 +43,7 @@ const LandingPage = () => {
 
         <div className="relative mb-5">
           <img
-            src="img.JPG" // Replace with the path to your image
+            src="img.jpg" // Replace with the path to your image
             alt="Rotating Image"
             className="rotating-image"/>
         </div>
