@@ -51,15 +51,15 @@ const LandingPage = () => {
         
       <style jsx>{`
   .relative {
-    height: 30vh; /* Adjust the height of the container */
+    height: 25vh; 
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .rotating-image {
-    width: 7rem; /* 7rem width */
-    height: 7rem; /* 7rem height */
+    width: 10rem;
+    height: 10rem; 
     object-fit: cover; /* Ensures the image covers the circle */
     border-radius: 50%; /* Makes the image circular */
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow effect */
