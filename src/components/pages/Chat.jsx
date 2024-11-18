@@ -7,6 +7,8 @@ const Chat = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [language, setLanguage] = useState("en"); // Default language is English
   const [dropdownOpen, setDropdownOpen] = useState(false); // State to toggle dropdown visibility
+const [selectedMode, setSelectedMode] = useState(null); // Track selected mode
+const [showPopup, setShowPopup] = useState(false); // Control popup visibility
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
@@ -51,6 +53,18 @@ const Chat = () => {
       console.error("Error sending message:", error);
     }
   };
+  const handleLanguageChange = (lang) => {
+  setLanguage(lang);
+  setSelectedMode(lang); // Set the selected mode
+  setShowPopup(true); // Show the popup when a mode is selected
+  setDropdownOpen(false); // Close dropdown after selection
+
+  // Close popup after 3 seconds
+  setTimeout(() => {
+    setShowPopup(false);
+  }, 2000);
+};
+
 
   // Get language prompt based on selected mode
   const getLanguagePrompt = (lang) => {
@@ -71,40 +85,50 @@ const Chat = () => {
   return (
     <section className="text-white">
       <div className="flex flex-col justify-center items-center gap-5 py-5 h-screen max-w-[900px] w-full mx-auto">
+
+        
         
         {/* Language Selection Button with Dropdown */}
         <div className="relative">
-          <button
-            onClick={toggleDropdown}
-            className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Click to Change Modes
-          </button>
+  <button
+    onClick={toggleDropdown}
+    className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
+  >
+    Click to Change Modes
+  </button>
 
-          {dropdownOpen && (
-            <div className="absolute mt-2 bg-pink-500 text-white rounded-lg shadow-lg w-48">
-              {[
-                { label: "English", code: "en" },
-                { label: "Igbo", code: "ig" },
-                { label: "Yoruba", code: "yo" },
-                { label: "Hausa", code: "ha" },
-                { label: "Edo", code: "bin" },
-                { label: "Ikwerre", code: "ikw" },
-                { label: "Pidgin", code: "pidgin" },
-                { label: "Ashewo Mode💀", code: "girlfriend" },
-                { label: "Homo Mode💀💀💀", code: "lgbtq" },
-              ].map((option) => (
-                <button
-                  key={option.code}
-                  onClick={() => handleLanguageChange(option.code)}
-                  className="block px-4 py-2 text-left w-full bg-pink-500 hover:bg-pink-700 rounded-t-lg"
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+  {dropdownOpen && (
+    <div className="absolute mt-2 bg-pink-500 text-white rounded-lg shadow-lg w-48">
+      {[
+        { label: "English", code: "en" },
+        { label: "Igbo", code: "ig" },
+        { label: "Yoruba", code: "yo" },
+        { label: "Hausa", code: "ha" },
+        { label: "Edo", code: "bin" },
+        { label: "Ikwerre", code: "ikw" },
+        { label: "Pidgin", code: "pidgin" },
+        { label: "Ashewo Mode💀", code: "girlfriend" },
+        { label: "Homo Mode💀💀💀", code: "lgbtq" },
+      ].map((option) => (
+        <button
+          key={option.code}
+          onClick={() => handleLanguageChange(option.code)}
+          className="block px-4 py-2 text-left w-full bg-pink-500 hover:bg-pink-700 rounded-t-lg"
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  )}
+
+  {/* Popup message for selected mode */}
+  {showPopup && (
+    <div className="absolute top-16 bg-pink-700 text-white py-2 px-4 rounded shadow-lg">
+      {`Mode ${selectedMode} has been selected!`}
+    </div>
+  )}
+</div>
+
 
         {/* Chat History */}
         <div className="flex-1 py-10 flex flex-col gap-5 overflow-y-auto">
