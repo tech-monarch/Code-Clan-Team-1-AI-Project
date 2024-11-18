@@ -22,7 +22,7 @@ const LandingPage = () => {
     >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
        <div>
-  <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[30px] md:text-[438px] lg:text-[44px] xl:text-[56px]">
+  <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[30px] md:text-[38px] lg:text-[44px] xl:text-[56px]">
     <TypewriterComponent
       onInit={(typewriter) => {
         typewriter
