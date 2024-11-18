@@ -138,12 +138,13 @@ const Chat = () => {
         {/* Chat History */}
         <div className="flex-1 py-10 flex flex-col gap-5 overflow-y-auto">
           {chatHistory.map((chat, index) => (
-            <div key={index} className={`flex ${chat.sender === 'user' ? 'flex-row-reverse' : 'flex-row'} gap-5`}>
-              <FaUserCircle size={40} className="text-gray-500" />
-              <p className={`py-3 px-5 rounded-lg ${chat.sender === 'user' ? 'bg-pink-500 text-white' : 'bg-gray-700 text-white'}`}>
-                {chat.text}
-              </p>
-            </div>
+            <div className={`flex ${chat.sender === 'user' ? 'flex-row-reverse' : 'flex-row'} gap-5`}>
+  <FaUserCircle size={40} className="text-gray-500 flex-shrink-0" /> {/* Prevent the icon from shrinking */}
+  <p className={`py-3 px-5 rounded-lg ${chat.sender === 'user' ? 'bg-pink-500 text-white' : 'bg-gray-700 text-white'} max-w-[75%]`}>
+    {chat.text}
+  </p>
+</div>
+
           ))}
           {isTyping && (
             <div className="flex items-center gap-3 text-gray-500">
