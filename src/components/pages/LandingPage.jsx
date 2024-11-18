@@ -41,6 +41,39 @@ const LandingPage = () => {
           </h1>
         </div>
 
+        <div className="relative">
+          <img
+            src="img.JPG" // Replace with the path to your image
+            alt="Rotating Image"
+            className="rotating-image"/>
+        </div>
+        
+      <style jsx>{`
+        .rotating-image {
+          width: 7rem;
+          height: 7rem;
+          animation: rotateScale 10s infinite;
+        }
+
+        @keyframes rotateScale {
+          0% {
+            transform: rotate(0deg) scale(1);
+          }
+          25% {
+            transform: rotate(90deg) scale(1.05);
+          }
+          50% {
+            transform: rotate(180deg) scale(1);
+          }
+          75% {
+            transform: rotate(270deg) scale(0.95);
+          }
+          100% {
+            transform: rotate(360deg) scale(1);
+          }
+        }
+      `}</style>
+
         <div className="flex flex-col gap-10">
           <div className="flex flex-col justify-center items-center gap-5">
             <button
