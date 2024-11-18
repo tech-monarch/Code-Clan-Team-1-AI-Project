@@ -73,7 +73,7 @@ const Chat = () => {
   // Get language prompt based on selected mode
   const getLanguagePrompt = (lang) => {
     const languagePrompts = {
-      english: "Lumina is a highly intelligent, smart and helpful assistant that can help with all daily problems till even more theoretical, practical and physical problems, and can engage in interesting and intruiging conversations and can help solve mathematical problems and replies in English.",
+      english: "Lumina is a highly intelligent, smart and helpful assistant that can help with all daily problems till even more theoretical, practical and physical problems, and can engage in interesting and intruiging conversations and can help solve mathematical problems and replies in English at default but can reply and talk with any other language when asked, and can also get realtime data from the internet.",
       igbo: "Lumina bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.",
       yoruba: "O jẹ iranlọwọ iranṣẹ kan ti o dahun ni ede Yorùbá.",
       hausa: "Kai taimakon mai amfani wanda yake amsa a Hausa.",
