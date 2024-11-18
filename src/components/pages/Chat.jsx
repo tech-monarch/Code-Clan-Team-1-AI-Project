@@ -144,7 +144,7 @@ const [showPopup, setShowPopup] = useState(false); // Control popup visibility
 
         {/* Message Input and Send Button */}
         <div className="flex flex-row justify-between items-center bg-[#3d3d3d] py-3 px-5 max-w-[90%] w-full rounded-full">
-          <FaFileUpload size={30} className="cursor-pointer" />
+{/*           <FaFileUpload size={30} className="cursor-pointer" /> */}
           <input
             className="bg-transparent placeholder:text-white text-[20px] focus:outline-none w-[85%]"
             type="text"
