@@ -21,51 +21,51 @@ const LandingPage = () => {
       }`}
     >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
-       <div>
-  <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[30px] md:text-[38px] lg:text-[44px] xl:text-[56px]">
-    <TypewriterComponent
-      onInit={(typewriter) => {
-        typewriter
-          .typeString("Hi, I'm Lumina.")
-          .pauseFor(750) // Delay after the first line finishes
-          .typeString("<br>") // Line break
-          .typeString("Your AI Companion!💝")
-          .start();
-      }}
-      options={{
-        autoStart: true,
-        loop: false, // Set to false to prevent looping/deletion
-        cursor: "_",
-        delay: 100,
-      }}
-    />
-  </h1>
-</div>
+        <div>
+          <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[30px] md:text-[38px] lg:text-[44px] xl:text-[56px]">
+            <TypewriterComponent
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("Hi, I'm Lumina.")
+                  .pauseFor(750) // Delay after the first line finishes
+                  .typeString("<br>") // Line break
+                  .typeString("Your AI Companion!💝")
+                  .start();
+              }}
+              options={{
+                autoStart: true,
+                loop: false, // Set to false to prevent looping/deletion
+                cursor: "_",
+                delay: 100,
+              }}
+            />
+          </h1>
+        </div>
 
         <div className="relative mb-5">
           <img
             src={logo} // Replace with the path to your image
             alt="Image"
-            className="rotating-image"/>
+            className="rotating-image"
+          />
         </div>
-        
-      <style jsx>{`
-  .relative {
-    height: 25vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .rotating-image {
-    width: 20rem;
-    height: 20rem; 
-    object-fit: cover; /* Ensures the image covers the circle */
-    border-radius: 50%; /* Makes the image circular */
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* White glow effect */
-  }
-`}</style>
+        <style jsx>{`
+          .relative {
+            height: 25vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
 
+          .rotating-image {
+            width: 20rem;
+            height: 20rem;
+            object-fit: cover; /* Ensures the image covers the circle */
+            border-radius: 50%; /* Makes the image circular */
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* White glow effect */
+          }
+        `}</style>
 
         <div className="flex flex-col gap-10">
           <div className="flex flex-col justify-center items-center gap-5">
