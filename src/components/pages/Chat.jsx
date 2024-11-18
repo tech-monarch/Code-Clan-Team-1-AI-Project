@@ -11,20 +11,31 @@ const Chat = () => {
     if (message.trim() === "") return;
 
     try {
-      const res = await fetch('http://localhost/backend/chatbot.php', {
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer YOUR_OPENAI_API_KEY' // Add your OpenAI API Key here
         },
         body: JSON.stringify({
-          message: message,
-          language: language // Send selected language/mode to backend
+          model: 'gpt-3.5-turbo',
+          messages: [
+            { role: 'system', content: getLanguagePrompt(language) },
+            { role: 'user', content: message }
+          ],
+          max_tokens: 150,
         }),
       });
-      const data = await res.json();
 
+      const data = await res.json();
+      
       // Update chat history with the user message and bot response
-      setChatHistory([...chatHistory, { sender: 'user', text: message }, { sender: 'bot', text: data.response }]);
+      setChatHistory([
+        ...chatHistory,
+        { sender: 'user', text: message },
+        { sender: 'bot', text: data.choices[0].message.content }
+      ]);
+
       setMessage(""); // Clear input field
     } catch (error) {
       console.error("Error sending message:", error);
@@ -33,6 +44,22 @@ const Chat = () => {
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
+  };
+
+  // Get language prompt based on selected mode
+  const getLanguagePrompt = (lang) => {
+    const languagePrompts = {
+      en: 'You are a helpful assistant that replies in English.',
+      ig: 'I bụ onye na-enyere aka nke na-aza ajụjụ n’asụsụ Igbo.',
+      yo: 'O jẹ iranlọwọ iranṣẹ kan ti o dahun ni ede Yorùbá.',
+      ha: 'Kai taimakon mai amfani wanda yake amsa a Hausa.',
+      bin: 'You are a helpful assistant that replies in Edo.',
+      ikw: 'You are a helpful assistant that replies in Ikwerre.',
+      pidgin: 'You be smart assistant wey sabi reply for Nigerian Pidgin.',
+      girlfriend: 'You are a caring and supportive girlfriend who responds warmly, thoughtfully, and affectionately.',
+      lgbtq: 'You are an empathetic and inclusive friend who supports LGBTQ+ individuals.'
+    };
+    return languagePrompts[lang] || languagePrompts.en;
   };
 
   return (
@@ -49,8 +76,8 @@ const Chat = () => {
             { label: "Edo", code: "bin" },
             { label: "Ikwerre", code: "ikw" },
             { label: "Pidgin", code: "pidgin" },
-            { label: "Ashewo Mode💀", code: "girlfriend" },
-            { label: "Homo Mode💀💀", code: "lgbtq" }
+            { label: "Girlfriend Mode", code: "girlfriend" },
+            { label: "LGBTQ+ Mode", code: "lgbtq" }
           ].map((option) => (
             <button
               key={option.code}
