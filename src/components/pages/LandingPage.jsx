@@ -28,7 +28,7 @@ const LandingPage = () => {
                   .typeString("Hi, I'm Lumina.")
                   .pauseFor(750) // Delay after the first line finishes
                   .typeString("<br>") // Line break
-                  .typeString("Your AI Companion!")
+                  .typeString("Your AI Companion!💝")
                   .start();
               }}
               options={{
