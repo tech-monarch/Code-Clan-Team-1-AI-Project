@@ -21,26 +21,26 @@ const LandingPage = () => {
       }`}
     >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
-        <div>
-          <h1 className="text-[48px] leading-[74.4px] font-bold text-center">
-            <TypewriterComponent
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Hi, I'm Lumina.")
-                  .pauseFor(750) // Delay after the first line finishes
-                  .typeString("<br>") // Line break
-                  .typeString("Your AI Companion!💝")
-                  .start();
-              }}
-              options={{
-                autoStart: true,
-                loop: false, // Set to false to prevent looping/deletion
-                cursor: "_",
-                delay: 100,
-              }}
-            />
-          </h1>
-        </div>
+       <div>
+  <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[60px]">
+    <TypewriterComponent
+      onInit={(typewriter) => {
+        typewriter
+          .typeString("Hi, I'm Lumina.")
+          .pauseFor(750) // Delay after the first line finishes
+          .typeString("<br>") // Line break
+          .typeString("Your AI Companion!💝")
+          .start();
+      }}
+      options={{
+        autoStart: true,
+        loop: false, // Set to false to prevent looping/deletion
+        cursor: "_",
+        delay: 100,
+      }}
+    />
+  </h1>
+</div>
 
         <div className="relative mb-5">
           <img
