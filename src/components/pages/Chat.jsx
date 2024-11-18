@@ -68,27 +68,28 @@ const Chat = () => {
       <div className="flex flex-col justify-center items-center gap-5 py-5 h-screen max-w-[900px] w-full mx-auto">
         
         {/* Language Selection Buttons */}
-        <div className="flex gap-2 pb-5">
-          {[
-            { label: "English", code: "en" },
-            { label: "Igbo", code: "ig" },
-            { label: "Yoruba", code: "yo" },
-            { label: "Hausa", code: "ha" },
-            { label: "Edo", code: "bin" },
-            { label: "Ikwerre", code: "ikw" },
-            { label: "Pidgin", code: "pidgin" },
-            { label: "Ashewo Mode💀", code: "girlfriend" },
-            { label: "Homo Mode💀💀💀", code: "lgbtq" }
-          ].map((option) => (
-            <button
-              key={option.code}
-              onClick={() => handleLanguageChange(option.code)}
-              className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
+        <div className="flex gap-2 pb-5 overflow-x-auto whitespace-nowrap">
+  {[
+    { label: "English", code: "en" },
+    { label: "Igbo", code: "ig" },
+    { label: "Yoruba", code: "yo" },
+    { label: "Hausa", code: "ha" },
+    { label: "Edo", code: "bin" },
+    { label: "Ikwerre", code: "ikw" },
+    { label: "Pidgin", code: "pidgin" },
+    { label: "Ashewo Mode💀", code: "girlfriend" },
+    { label: "Homo Mode💀💀💀", code: "lgbtq" }
+  ].map((option) => (
+    <button
+      key={option.code}
+      onClick={() => handleLanguageChange(option.code)}
+      className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"
+    >
+      {option.label}
+    </button>
+  ))}
+</div>
+
 
         <div className="flex-1 py-10 flex flex-col gap-5 overflow-y-auto">
           {chatHistory.map((chat, index) => (
