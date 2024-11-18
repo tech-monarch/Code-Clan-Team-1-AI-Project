@@ -58,8 +58,8 @@ const LandingPage = () => {
   }
 
   .rotating-image {
-    width: 15rem;
-    height: 15rem; 
+    width: 20rem;
+    height: 20rem; 
     object-fit: cover; /* Ensures the image covers the circle */
     border-radius: 50%; /* Makes the image circular */
     box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6); /* White glow effect */
