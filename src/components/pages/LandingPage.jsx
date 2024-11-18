@@ -2,6 +2,7 @@ import TypewriterComponent from "typewriter-effect";
 // import Button from "../common/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { logo } from "../../assets";
 
 const LandingPage = () => {
   const [swipe, setSwipe] = useState(false);
@@ -43,7 +44,7 @@ const LandingPage = () => {
 
         <div className="relative mb-5">
           <img
-            src="./logo.jpg" // Replace with the path to your image
+            src={logo} // Replace with the path to your image
             alt="Image"
             className="rotating-image"/>
         </div>
