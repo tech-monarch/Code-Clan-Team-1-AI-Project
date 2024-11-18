@@ -50,19 +50,22 @@ const LandingPage = () => {
         </div>
         
       <style jsx>{`
-         .relative {
-            height: 30vh; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-      
-        .rotating-image {
-          width: 7rem;
-          height: 7rem;
-        }
+  .relative {
+    height: 30vh; /* Adjust the height of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-      `}</style>
+  .rotating-image {
+    width: 7rem; /* 7rem width */
+    height: 7rem; /* 7rem height */
+    object-fit: cover; /* Ensures the image covers the circle */
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow effect */
+  }
+`}</style>
+
 
         <div className="flex flex-col gap-10">
           <div className="flex flex-col justify-center items-center gap-5">
