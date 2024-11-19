@@ -16,32 +16,37 @@ const Chat = () => {
     setDropdownOpen((prev) => !prev);
   };
   
+const handleSendMessage = async () => {
+  if (message.trim() === "") return;
 
-  const handleSendMessage = async () => {
-    if (message.trim() === "") return;
+  // Start typing animation
+  setIsTyping(true);
 
-    // Start typing animation
-    setIsTyping(true);
+  // Limit the context to the last 5 messages
+  const context = chatHistory.slice(-5).map(chat => ({
+    role: chat.sender === 'user' ? 'user' : 'assistant',
+    content: chat.text,
+  }));
 
-    try {
-      const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer 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", // Replace with your actual OpenAI API key
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [
-            { role: "system", content: getLanguagePrompt(language) },
-            { role: "user", content: message },
-          ],
-          max_tokens: 300,
-        }),
-      });
+  try {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer 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", // Replace with your actual OpenAI API key
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          { role: "system", content: getLanguagePrompt(language) },
+          ...context, // Include the last few messages for context
+          { role: "user", content: message },
+        ],
+        max_tokens: 300,
+      }),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
       // Update chat history with the user message and bot response
       setChatHistory([
