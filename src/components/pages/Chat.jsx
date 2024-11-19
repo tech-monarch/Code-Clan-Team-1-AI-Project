@@ -37,7 +37,7 @@ const Chat = () => {
             { role: "system", content: getLanguagePrompt(language) },
             { role: "user", content: message },
           ],
-          max_tokens: 150,
+          max_tokens: 300,
         }),
       });
 
