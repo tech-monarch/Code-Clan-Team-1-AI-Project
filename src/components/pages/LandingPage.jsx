@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ModeToggle } from "../mode-toggle";
+// import { ModeToggle } from "../mode-toggle";
 import { Button } from "../ui/button";
 
 const LandingPage = () => {
   return (
     <div>
-      <ModeToggle />
+      
       <Button>
         <Link to="/auth">Get Started</Link>
       </Button>
