@@ -22,7 +22,7 @@ const LandingPage = () => {
     >
       <div className="flex flex-col justify-between h-screen gap-20 py-10 text-white">
         <div>
-          <h1 className="text-center text-[48px] leading-[74.4px] font-bold sm:text-[30px] md:text-[38px] lg:text-[44px] xl:text-[56px]">
+          <h1 className="text-center text-[48px] leading-[74.4px] font-bold text-28px sm:text-[30px] md:text-[38px] lg:text-[44px] xl:text-[56px]">
             <TypewriterComponent
               onInit={(typewriter) => {
                 typewriter
@@ -43,11 +43,7 @@ const LandingPage = () => {
         </div>
 
         <div className="relative mb-5">
-          <img
-            src={logo} // Replace with the path to your image
-            alt="Image"
-            className="rotating-image"
-          />
+          <img src={logo} alt="Image" className="rotating-image" />
         </div>
 
         <style jsx>{`
@@ -71,7 +67,7 @@ const LandingPage = () => {
           <div className="flex flex-col justify-center items-center gap-5">
             <button
               onClick={handleStartChatting}
-              className="bg-customPink font-inter px-28 py-3 text-center text-white text-[24px] font-bold leading-[29.05px] cursor-pointer rounded-full shadow-md"
+              className="bg-customPink font-inter px-[30px] md:px-28 py-3 text-center text-white text-[24px] font-bold leading-[29.05px] cursor-pointer rounded-full shadow-md"
             >
               Start Chatting
             </button>
