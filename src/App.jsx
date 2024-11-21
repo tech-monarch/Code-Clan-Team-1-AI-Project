@@ -27,10 +27,13 @@ const router = createBrowserRouter(
 );
 const App = () => {
   return (
-    <>
-      <ModeToggle />
+    <div className="flex flex-col gap-5 mx-auto py-7 md:py-10 max-w-[1024px] w-full">
+      <div className="ml-auto">
+        <ModeToggle />
+      </div>
+
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 };
 
